@@ -478,3 +478,34 @@ html {
   border: 2px solid white;
   color: white;
 }
+/* PAYMENT BOXES */
+
+.payment-box {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+}
+
+.qr-image {
+  width: 180px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.upi-id {
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.payment-box input,
+.payment-box select {
+  width: 90%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+}
