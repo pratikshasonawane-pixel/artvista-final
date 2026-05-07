@@ -481,7 +481,7 @@ html {
 /* PAYMENT BOXES */
 
 .payment-box {
-  display: block;
+  display: none;
   margin-top: 20px;
   padding: 20px;
   border-radius: 20px;
@@ -489,10 +489,10 @@ html {
   backdrop-filter: blur(10px);
 }
 
-.qr-image {
-  width: 180px;
-  margin-top: 10px;
-  border-radius: 20px;
+.qr-image{
+  width:200px;
+  margin-top:15px;
+  border-radius:15px;
 }
 
 .upi-id {
@@ -502,10 +502,11 @@ html {
 }
 
 .payment-box input,
-.payment-box select {
-  width: 90%;
-  padding: 12px;
-  margin-top: 10px;
-  border-radius: 10px;
-  border: none;
+.payment-box select{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
+  border-radius:10px;
+  outline:none;
 }
