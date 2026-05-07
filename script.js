@@ -147,24 +147,27 @@ function goToProduct(name, price) {
 }
 /* PAYMENT METHODS */
 
-function showPaymentFields() {
+window.showPaymentFields = function () {
 
   const payment = document.getElementById("payment").value;
 
-  document.getElementById("upiBox").style.display = "none";
-  document.getElementById("cardBox").style.display = "none";
-  document.getElementById("netBox").style.display = "none";
+  const upiBox = document.getElementById("upiBox");
+  const cardBox = document.getElementById("cardBox");
+  const netBox = document.getElementById("netBox");
+
+  upiBox.style.display = "none";
+  cardBox.style.display = "none";
+  netBox.style.display = "none";
 
   if (payment === "UPI") {
-    document.getElementById("upiBox").style.display = "block";
+    upiBox.style.display = "block";
   }
 
-  else if (payment === "CARD") {
-    document.getElementById("cardBox").style.display = "block";
+  if (payment === "CARD") {
+    cardBox.style.display = "block";
   }
 
-  else if (payment === "NETBANKING") {
-    document.getElementById("netBox").style.display = "block";
+  if (payment === "NETBANKING") {
+    netBox.style.display = "block";
   }
-
 }
