@@ -145,3 +145,26 @@ function goToProduct(name, price) {
   localStorage.setItem("productPrice", price);
   window.location.href = "product.html";
 }
+/* PAYMENT METHODS */
+
+function showPaymentFields() {
+
+  const payment = document.getElementById("payment").value;
+
+  document.getElementById("upiBox").style.display = "none";
+  document.getElementById("cardBox").style.display = "none";
+  document.getElementById("netBox").style.display = "none";
+
+  if (payment === "UPI") {
+    document.getElementById("upiBox").style.display = "block";
+  }
+
+  else if (payment === "CARD") {
+    document.getElementById("cardBox").style.display = "block";
+  }
+
+  else if (payment === "NETBANKING") {
+    document.getElementById("netBox").style.display = "block";
+  }
+
+}
