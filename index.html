@@ -219,13 +219,60 @@
       <option value="500">Premium (+₹500)</option>
     </select>
 
-    <label>Payment</label>
-    <select id="payment">
-      <option>Cash on Delivery</option>
-      <option>UPI</option>
-      <option>Card</option>
-      <option>Net Banking</option>
-    </select>
+    <!-- PAYMENT METHOD -->
+<label>Payment Method</label>
+
+<select id="payment" onchange="showPaymentFields()">
+  <option value="COD">Cash on Delivery</option>
+  <option value="UPI">UPI</option>
+  <option value="CARD">Card</option>
+  <option value="NETBANKING">Net Banking</option>
+</select>
+
+<!-- UPI PAYMENT -->
+<div id="upiBox" class="payment-box">
+
+  <h3>📱 Pay via UPI</h3>
+
+  <img src="images/qr.png" class="qr-image">
+
+  <p class="upi-id">
+    UPI ID: artvista@upi
+  </p>
+
+  <p>After payment send screenshot on WhatsApp ✅</p>
+
+</div>
+
+<!-- CARD PAYMENT -->
+<div id="cardBox" class="payment-box">
+
+  <h3>💳 Card Payment</h3>
+
+  <input type="text" placeholder="Card Number">
+
+  <input type="text" placeholder="Card Holder Name">
+
+  <input type="text" placeholder="Expiry Date">
+
+  <input type="password" placeholder="CVV">
+
+</div>
+
+<!-- NET BANKING -->
+<div id="netBox" class="payment-box">
+
+  <h3>🏦 Net Banking</h3>
+
+  <select>
+    <option>Select Bank</option>
+    <option>HDFC Bank</option>
+    <option>SBI Bank</option>
+    <option>ICICI Bank</option>
+    <option>Axis Bank</option>
+  </select>
+
+</div>
 
     <input type="text" id="name" placeholder="Your Name">
     <input type="text" id="phone" placeholder="Phone Number">
