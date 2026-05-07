@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ArtVista Admin</title>
+
+<script>
+  let isAuth = sessionStorage.getItem("adminAuth");
+
+  if (!isAuth) {
+    const password = prompt("Enter Admin Password:");
+
+    if (password === "admin123") {
+      sessionStorage.setItem("adminAuth", "true");
+    } else {
+      alert("Access Denied!");
+      window.location.href = "index.html";
+    }
+  }
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  overflow-x: hidden;
+}
+
+/* ✨ FLOATING DOODLE BACKGROUND */
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: url('images/indexdoodle.jpg') repeat;
+  opacity: 0.08;
+  animation: moveBg 25s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveBg {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(-300px, -300px); }
+}
+
+/* HEADER */
+h1 {
+  text-align: center;
+  padding: 30px;
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  color: #222;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ORDER CARD */
+.order {
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  transform: translateY(30px);
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* DELAY ANIMATION */
+.order:nth-child(1) { animation-delay: 0.1s; }
+.order:nth-child(2) { animation-delay: 0.2s; }
+.order:nth-child(3) { animation-delay: 0.3s; }
+.order:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* TEXT */
+.order p {
+  margin: 8px 0;
+  color: #333;
+}
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+/* EMPTY STATE */
+.empty {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-top: 50px;
+}
+
+/* BUTTONS */
+.actions {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #000, #444);
+  color: white;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎨 ArtVista Admin Panel</h1>
+
+<div class="actions">
+  <button onclick="clearOrders()">Clear All Orders</button>
+</div>
+
+<div class="container" id="orders"></div>
+
+<script>
+const container = document.getElementById("orders");
+let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+if (orders.length === 0) {
+  container.innerHTML = "<div class='empty'>No orders yet 😔</div>";
+} else {
+  orders.reverse().forEach(order => {
+    container.innerHTML += `
+      <div class="order">
+        <p><b>Name:</b> ${order.name || "-"}</p>
+        <p><b>Phone:</b> ${order.phone || "-"}</p>
+        <p><b>Product:</b> ${order.product || "Custom Painting"}</p>
+        <p><b>Price:</b> ${order.price}</p>
+        <p><b>Date:</b> ${order.date}</p>
+        <span class="badge">New Order</span>
+      </div>
+    `;
+  });
+}
+
+/* CLEAR BUTTON */
+function clearOrders() {
+  if (confirm("Delete all orders?")) {
+    localStorage.removeItem("orders");
+    location.reload();
+  }
+}
+</script>
+
+</body>
+</html>

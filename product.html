@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order Product</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<header>
+  <h2 class="logo">🎨 ArtVista</h2>
+</header>
+
+<section class="custom-form">
+
+  <h2>🛍️ Complete Your Order</h2>
+
+  <h3 id="productInfo"></h3>
+
+  <label>Name</label>
+  <input type="text" id="name">
+
+  <label>Phone Number</label>
+  <input type="text" id="phone">
+
+  <label>Address</label>
+  <textarea id="address"></textarea>
+
+  <label>Payment Method</label>
+  <select id="payment">
+    <option>Cash on Delivery</option>
+    <option>UPI</option>
+    <option>Card</option>
+  </select>
+
+  <button onclick="placeProductOrder()">Place Order</button>
+
+</section>
+
+<script>
+
+const name = localStorage.getItem("productName");
+const price = localStorage.getItem("productPrice");
+
+document.getElementById("productInfo").innerText =
+  name + " - ₹" + price;
+
+function placeProductOrder() {
+
+  const userName = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const address = document.getElementById("address").value;
+  const payment = document.getElementById("payment").value;
+
+  if (!userName || !phone || !address) {
+    alert("Please fill all details");
+    return;
+  }
+
+  const orderId = "ART" + Date.now();
+
+  const order = {
+    id: orderId,
+    name: userName,
+    phone: phone,
+    address: address,
+    product: name,
+    price: "₹" + price,
+    payment: payment,
+    date: new Date().toLocaleString()
+  };
+
+  let orders = JSON.parse(localStorage.getItem("orders")) || [];
+  orders.push(order);
+  localStorage.setItem("orders", JSON.stringify(orders));
+
+  localStorage.setItem("currentOrderId", orderId);
+
+  const message = `🖼️ Product Order
+
+Order ID: ${orderId}
+Name: ${userName}
+Phone: ${phone}
+Address: ${address}
+
+Product: ${name}
+Price: ₹${price}
+Payment: ${payment}`;
+
+  window.open(`https://wa.me/919970184634?text=${encodeURIComponent(message)}`);
+
+  window.location.href = "confirmation.html";
+}
+
+</script>
+
+</body>
+</html>

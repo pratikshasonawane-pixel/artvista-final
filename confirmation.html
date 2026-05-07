@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order Confirmed</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-- NAVBAR SAME AS INDEX -->
+<header>
+  <h2 class="logo">🎨 ArtVista</h2>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#shop">Shop</a>
+    <a href="index.html#custom">Custom</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- CONFIRMATION SECTION -->
+<section class="confirmation">
+
+  <div class="confirm-box">
+
+    <h1>🎉 Order Placed Successfully!</h1>
+
+    <p>Your Order ID:</p>
+    <h2 id="orderId"></h2>
+
+    <p>Use this ID to track your order</p>
+
+    <div class="buttons">
+      <button onclick="goTrack()">Track Order</button>
+      <button onclick="goHome()" class="outline">Back to Home</button>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+const orderId = localStorage.getItem("currentOrderId");
+document.getElementById("orderId").innerText = orderId || "N/A";
+
+function goTrack() {
+  window.location.href = "track.html";
+}
+
+function goHome() {
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

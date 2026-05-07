@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ArtVista</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <h2 class="logo">🎨 ArtVista</h2>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#" onclick="openPopup()">Custom</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text" data-aos="fade-right">
+    <h1>Where Colors Tell Stories</h1>
+    <p>Explore handmade & customized paintings</p>
+  </div>
+
+  <div class="hero-images" data-aos="zoom-in">
+    <img src="images/doddleindex.jpg" class="img1">
+    <img src="images/artdoodle.jpg" class="img2">
+    <img src="images/artdoodle2.jpg" class="img3">
+    <img src="images/artdoodle3.jpg" class="img4">
+    <!-- NEW IMAGES -->
+  <img src="images/doodle1.jpg" class="img5">
+  <img src="images/doodle2.jpg" class="img6">
+  <img src="images/aesthetic.jpg" class="img7">
+  <img src="images/mandala.jpg" class="img8">
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="shop" data-aos="fade-up">
+  <h2>Featured Paintings</h2>
+
+  <div class="grid">
+
+   <div class="card">
+  <img src="images/aesthetic.jpg" class="img">
+  <h3>mandala work</h3>
+  <p>₹800</p>
+
+  <button onclick="goToProduct('mandala work', 800)">
+    Buy Now
+  </button>
+</div>
+
+    <div class="card">
+      <img src="images/BFF.jpg" class="img">
+      <h3>trio group</h3>
+      <p>₹700</p>
+
+      <button onclick="goToProduct('trio group', 700)">
+        Buy Now
+      </button>
+    </div>
+
+    <div class="card">
+      <img src="images/climate.jpg" class="img">
+      <h3>peace climate</h3>
+      <p>₹500</p>
+
+    <button onclick="goToProduct('peace climate', 500)">
+      Buy Now
+    </button>
+    </div>
+
+     <div class="card">
+      <img src="images/couple.jpg" class="img">
+      <h3>couple</h3>
+      <p>₹780</p>
+      <button onclick="goToProduct('couple', 780)">
+        Buy Now
+      </button>   
+    </div>
+
+     <div class="card">
+      <img src="images/Divass.jpg" class="img">
+      <h3>GirlsGroup</h3>
+      <p>₹690</p>
+      <button onclick="goToProduct('GirlsGroup', 690)">
+        Buy Now
+      </button>  
+    </div>
+
+     <div class="card">
+      <img src="images/doodle1.jpg" class="img">
+      <h3>doodle work</h3>
+      <p>₹1000</p>
+      <button onclick="goToProduct('doodle work', 1000)">
+       Buy Now
+      </button>
+    </div>
+
+    <div class="card">
+      <img src="images/doodle2.jpg" class="img">
+      <h3>doddle art</h3>
+      <p>₹1000</p>
+    <button onclick="goToProduct('doodle art', 1000)">
+      Buy Now
+    </button>    
+    </div>
+
+    <div class="card">
+      <img src="images/GirlsGroup.jpg" class="img">
+      <h3>girlygirl</h3>
+      <p>₹880</p>
+    <button onclick="goToProduct('girlygirl', 880)">
+     Buy Now
+    </button>    
+    </div>
+
+    <div class="card">
+      <img src="images/lovemelikeudo.jpg" class="img">
+      <h3>mandala and painting</h3>
+      <p>₹760</p>
+    <button onclick="goToProduct('mandala and painting', 760)">
+     Buy Now
+    </button>    
+    </div>
+
+    <div class="card">
+      <img src="images/lovieedoviee.jpg" class="img">
+      <h3>couplee</h3>
+      <p>₹500</p>
+    <button onclick="goToProduct('couplee', 500)">
+     Buy Now
+    </button>    
+    </div>
+
+    <div class="card">
+      <img src="images/mandala.jpg" class="img">
+      <h3>mandala</h3>
+      <p>₹950</p>
+    <button onclick="goToProduct('mandala', 950)">
+     Buy Now
+    </button>    
+    </div>
+
+    <div class="card">
+      <img src="images/potrait&mandala.jpg" class="img">
+      <h3>girl with mandala work</h3>
+      <p>₹1000</p>
+    <button onclick="goToProduct('girl with mandala work', 1000)">
+     Buy Now
+    </button>    
+    </div>
+
+    <div class="card">
+      <img src="images/sunsett.jpg" class="img">
+      <h3>sunset</h3>
+      <p>₹786</p>
+    <button onclick="goToProduct('sunset', 786)">
+     Buy Now
+    </button>    
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" data-aos="fade-up">
+  <h2>Contact Us</h2>
+  <p>📞 Phone: 9970184634</p>
+  <p>📧 Email: lastadmin@gmail.com</p>
+
+  <a href="https://wa.me/919970184634" target="_blank">
+    <button>Chat on WhatsApp</button>
+  </a>
+</section>
+
+<script src="script.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+
+    <span class="close" onclick="closePopup()">&times;</span>
+
+    <h2>🎨 Customize Your Painting</h2>
+
+    <input type="file" id="upload">
+    <img id="preview">
+
+    <label>Size</label>
+    <select id="size">
+      <option value="0">Select</option>
+      <option value="500">A4 - ₹500</option>
+      <option value="1000">A3 - ₹1000</option>
+      <option value="2000">Large - ₹2000</option>
+    </select>
+
+    <label>Style</label>
+    <select id="style">
+      <option value="0">Normal</option>
+      <option value="200">Detailed (+₹200)</option>
+      <option value="500">Premium (+₹500)</option>
+    </select>
+
+    <label>Payment</label>
+    <select id="payment">
+      <option>Cash on Delivery</option>
+      <option>UPI</option>
+      <option>Card</option>
+      <option>Net Banking</option>
+    </select>
+
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="text" id="phone" placeholder="Phone Number">
+
+    <textarea id="details" placeholder="Enter details"></textarea>
+
+    <h3 id="price">Total Price: ₹0</h3>
+
+    <button onclick="sendToWhatsApp()">Place Order</button>
+
+  </div>
+</div>
+
+</body>
+</html>
