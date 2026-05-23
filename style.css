@@ -510,3 +510,16 @@ html {
   border-radius:10px;
   outline:none;
 }
+
+.popup {
+  overflow-y: auto;
+}
+
+.popup-content{
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.popup-content button{
+  margin-bottom: 30px;
+}
