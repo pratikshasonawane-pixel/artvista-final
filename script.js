@@ -82,7 +82,10 @@ Phone: ${phone}
 Price: ${price}
 Payment: ${payment}
 
-Details: ${details}`;
+Details: ${details}
+
+📸 Please send your reference image on WhatsApp with this Order ID.
+This helps us identify your custom painting.`;
 
   window.open(`https://wa.me/919970184634?text=${encodeURIComponent(message)}`);
 
@@ -151,25 +154,21 @@ function goToProduct(name, price) {
 
 function showPaymentFields() {
 
-  let payment = document.getElementById("payment").value;
+  const payment = document.getElementById("payment").value;
 
-  let upiBox = document.getElementById("upiBox");
-  let cardBox = document.getElementById("cardBox");
-  let netBox = document.getElementById("netBox");
+  document.getElementById("upiBox").style.display = "none";
+  document.getElementById("cardBox").style.display = "none";
+  document.getElementById("netBox").style.display = "none";
 
-  upiBox.style.display = "none";
-  cardBox.style.display = "none";
-  netBox.style.display = "none";
-
-  if(payment === "UPI") {
-    upiBox.style.display = "block";
+  if(payment === "UPI"){
+    document.getElementById("upiBox").style.display = "block";
   }
 
-  else if(payment === "CARD") {
-    cardBox.style.display = "block";
+  else if(payment === "CARD"){
+    document.getElementById("cardBox").style.display = "block";
   }
 
-  else if(payment === "NETBANKING") {
-    netBox.style.display = "block";
+  else if(payment === "NETBANKING"){
+    document.getElementById("netBox").style.display = "block";
   }
 }
